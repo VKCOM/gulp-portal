@@ -1,7 +1,9 @@
 {
   "env": {
-    "node": true,
-    "browser": false
+    "node": true
+  },
+  "rules": {
+    "no-underscore-dangle": 0
   },
   "extends": "airbnb"
 }
