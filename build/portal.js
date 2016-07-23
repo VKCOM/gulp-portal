@@ -152,7 +152,7 @@ function sendToWorker(workerId, message, timeout, name) {
       });
     }, ctimeout);
   }).then(function (result) {
-    clearTimeout(timeout);
+    clearTimeout(ctimeout);
     return result;
   });
 }
