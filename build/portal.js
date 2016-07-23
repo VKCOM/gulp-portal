@@ -136,13 +136,13 @@ function listenWorker(fuid, resolve, worker, message) {
 
 function sendToWorker(workerId, message, timeout, name) {
   var fuid = uuid.v4();
-  var ctimeout = timeout;
+  var timeoutId = void 0;
   return new Promise(function (resolve) {
     var worker = cluster.workers[workerId];
     worker.send(fuid + message);
     worker.once('message', listenWorker.bind(null, fuid, resolve, worker));
 
-    ctimeout = setTimeout(function () {
+    timeoutId = setTimeout(function () {
       resolve({
         type: 'error',
         error: new gutils.PluginError('gulp-portal', new Error('File ' + name + ' didn\'t return from portal'), {
@@ -150,9 +150,9 @@ function sendToWorker(workerId, message, timeout, name) {
           fileName: name
         })
       });
-    }, ctimeout);
+    }, timeout);
   }).then(function (result) {
-    clearTimeout(ctimeout);
+    clearTimeout(timeoutId);
     return result;
   });
 }
