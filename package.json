@@ -1,6 +1,6 @@
 {
   "name": "gulp-portal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple way to run gulp pipes on many cores",
   "main": "index.js",
   "scripts": {
