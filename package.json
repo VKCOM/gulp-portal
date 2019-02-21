@@ -2,11 +2,13 @@
   "name": "gulp-portal",
   "version": "1.0.1",
   "description": "Simple way to run gulp pipes on many cores",
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "main": "index.js",
   "scripts": {
     "test": "mocha ./tests/lib/*.js",
-    "test-watch": "mocha ./tests/lib/*.js -w",
-    "build": "babel --presets es2015 -d build/ lib/"
+    "test-watch": "mocha ./tests/lib/*.js -w"
   },
   "keywords": [
     "gulp",
@@ -17,19 +19,19 @@
   "author": "Termina1",
   "license": "MIT",
   "dependencies": {
-    "gulp-plumber": "^1.1.0",
-    "gulp-util": "^3.0.7",
-    "node-uuid": "^1.4.7",
-    "object-assign": "^4.1.0",
-    "through2": "^2.0.1",
-    "through2-concurrent": "^1.1.1",
-    "vinyl": "^1.1.1"
+    "gulp-plumber": "^1.2.1",
+    "plugin-error": "^1.0.1",
+    "through2": "^3.0.0",
+    "through2-concurrent": "^2.0.0",
+    "uuid": "^3.3.2",
+    "vinyl": "^2.2.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.11.4",
-    "babel-preset-es2015": "^6.9.0",
-    "chai": "^3.5.0",
-    "mocha": "^2.5.3",
+    "chai": "^4.2.0",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "mocha": "^6.0.0",
     "stream-array": "^1.1.2",
     "stream-assert": "^2.0.3"
   }
