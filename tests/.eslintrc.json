@@ -3,7 +3,12 @@
     "mocha": true
   },
   "rules": {
-    "no-underscore-dangle": 0
+    "no-underscore-dangle": 0,
+    "no-plusplus": 0,
+    "no-buffer-constructor": "error",
+    "new-cap": ["error", {
+      "newIsCapExceptions": ["Buffer.from"]
+    }]
   },
-  "extends": "airbnb"
+  "extends": "eslint-config-airbnb-base"
 }

@@ -9,7 +9,7 @@ function testStream(...args) {
       cwd: '/home/wonderland/',
       base: '/home/wonderland/test',
       path: `/home/wonderland/test/file${(i++).toString()}.js`,
-      contents: new Buffer(contents),
+      contents: new Buffer.from(contents),
     });
   }
 

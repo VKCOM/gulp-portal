@@ -2,7 +2,6 @@ const portal = require('../../lib/portal');
 const { testStream } = require('../utils');
 const assert = require('stream-assert');
 const { expect } = require('chai');
-const assign = require('object-assign');
 const path = require('path');
 const through = require('through2');
 
@@ -79,7 +78,7 @@ describe('gulp portal', () => {
 
   it('passes through two file through two streams with 1 concurrency', (done) => {
     const start = Date.now();
-    const curCfg = assign({}, twoStdConfig, {
+    const curCfg = Object.assign({}, twoStdConfig, {
       maxParallel: 1,
     });
     testStream('test', 'test2')
@@ -96,13 +95,13 @@ describe('gulp portal', () => {
 
   it('passes through one file through one stream and gets error, but can\'t route back', (done) => {
     testStream('test')
-      .pipe(portal.start(assign({}, oneStdConfig, { worker: breaker, timeout: 500 })))
+      .pipe(portal.start(Object.assign({}, oneStdConfig, { worker: breaker, timeout: 500 })))
       .on('error', verifyError.bind(null, /didn't return from portal/, done));
   });
 
   it('passes through one file through one stream and gets error', (done) => {
     testStream('test')
-      .pipe(portal.start(assign({}, oneStdConfig, { worker: goodBreaker, timeout: 500 })))
+      .pipe(portal.start(Object.assign({}, oneStdConfig, { worker: goodBreaker, timeout: 500 })))
       .on('error', verifyError.bind(null, /I'm a breaker/, done));
   });
 });
