@@ -1,6 +1,6 @@
 {
   "name": "@vkontakte/gulp-portal",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Simple way to run gulp pipes on many cores",
   "engines": {
     "node": ">=6.0.0"
@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "eslint": "^6.0.1",
+    "eslint": "^6.2.2",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.18.0",
     "mocha": "^6.1.4",
