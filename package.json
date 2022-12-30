@@ -31,7 +31,7 @@
     "eslint": "^6.2.2",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.18.0",
-    "mocha": "^6.1.4",
+    "mocha": "^10.2.0",
     "stream-array": "^1.1.2",
     "stream-assert": "^2.0.3"
   }
